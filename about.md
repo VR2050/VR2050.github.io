@@ -2,6 +2,7 @@
 layout: page
 title: About
 permalink: /about/
+toc:true
 ---
 
 HELLO WORLD! THIS IS VR2050!
