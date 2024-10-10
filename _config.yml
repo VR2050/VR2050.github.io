@@ -67,15 +67,15 @@ disqus: # fromendworld
 gitalk:
   clientID: Ov23ct0xqa6cqhG9vdPh
   clientSecret: c71f68197d0748b7e1148fb52b7b81bc814022da
-  repo: dotponder.github.io
-  owner: dotponder
+  repo: vr2050.github.io
+  owner: VR2050
 
 # Enter your Google Analytics web tracking code (e.g. UA-2110908-2) to activate tracking
 # google_analytics: 
 
 # Your website URL (e.g. http://barryclark.github.io or http://www.barryclark.co)
 # Used for Sitemap.xml and your RSS feed
-url: https://dotponder.github.io
+url: https://vr2050.github.io
 
 # If you're hosting your site at a Project repository on GitHub pages
 # (http://yourusername.github.io/repository-name)
