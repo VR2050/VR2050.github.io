@@ -3,9 +3,9 @@
 #
 
 # Name of your site (displayed in the header)
-name: "Arnold's Blog"
+name: "VR2050's blog"
 # Short bio or description (displayed in the header)
-description: "幻想中的美好技术分享世界"
+description: "问无止境"
 
 #
 # Flags below are optional
@@ -41,11 +41,11 @@ footer-links:
   #weibo: frommidworld #请输入你的微博个性域名 https://www.weibo.com/<thispart>
   behance: # https://www.behance.net/<username>
   dribbble:
-  zhihu:
-  email: arnoldchow@outlook.com
+  zhihu:  VR2050
+  email: 2779753429@qq.com
   facebook:
   flickr:
-  github: dotponder 
+  github: VR2050 
   googleplus: # anything in your profile username that comes after plus.google.com/
   instagram:
   linkedin:
