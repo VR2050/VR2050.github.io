@@ -1,62 +1,29 @@
 ---
 layout: post
-title: "清除Github上Commit记录"
-date:   2023-03-05
+title: "第一篇博客"
+date:   20224-10-12
 tags: [Git]
 comments: true
-author: Arnold
+author: VR2050
 toc: true
 ---
 
-把项目提交到 GitHub 上，有时候可能不小心提交了一些隐私信息，如密码和邮箱。如何删除这些记录，形成一个全新的仓库，并且保持代码不变呢？
+这是我的第一篇博客， I‘m VR2050
+## 个人简介
+目前是一个大学牲，对ctf感兴趣一些，喜欢打打pwn，还是个萌新，对渗透了解一点点，也在尝试，嘻嘻
 
+对Linux感些兴趣，还在学习的路上
+
+闲暇时光打打游戏，彩虹六号菜的一批，偶尔听听歌，听的音乐比较杂，曲风从流行到电子不等，杂食爱好者
+
+搭建博客的目的是用过来当学习笔记，记录生活，嘻嘻，目前还不知道写啥嘞
 <!-- more -->
 
-* 新建一个空分支
+* 跟大家打声招呼吧
 
   ``` bash
-  git checkout --orphan latest_branch
+  echo hello world！！
   ```
+## 偶对了
 
-* 添加所有的文件
-
-  ```bash
-  git add -A
-  ```
-
-  注意，此时可能会产生新文件，可以先行删除。
-
-* 提交空信息
-
-  ```bash
-  git commit -am "."
-  ```
-
-* 强制删除旧分支
-
-  ```bash
-  git branch -D master
-  ```
-
-  如果旧分支名称不是 `master`，可以自行更改
-
-* 当前分支改为旧分支名称
-
-  ```bash
-  git branch -m master
-  ```
-
-* 强制推送到远程仓库
-
-  ```bash
-  git push -f origin master
-  ```
-
-  此时检查一下Github，就会发现所有的commit信息都被清理了呢。
-  
-  
-
-此文就到此结束啦！欢迎大家在评论区留言哦ヾ(^▽^*)))
-Ciallo～(∠・ω< )⌒☆
-
-**如果本文令你受益匪浅，愿意慷慨解囊，可以点击[这里](https://dotponder.github.io/likes/)，然后扫描二维码，一分也是爱。分享推荐给身边的朋友，不胜感激**。
+感谢Arnold前辈的微博框架，谢谢捏！！
