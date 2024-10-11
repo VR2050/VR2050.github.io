@@ -2,7 +2,7 @@
 layout: post
 title: "第一篇博客"
 date:   2024-10-12
-tags: [helloworld]
+tags: [helloworld_github]
 comments: true
 author: VR2050
 toc: true
