@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "第一篇博客"
-date:   20224-10-12
+date:   2024-10-12
 tags: [Git]
 comments: true
 author: VR2050
