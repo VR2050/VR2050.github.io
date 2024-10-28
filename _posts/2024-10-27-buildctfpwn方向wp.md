@@ -7,7 +7,7 @@ comments: true
 author: VR2050
 toc: true
 ---
-# buildctf pwn方向部分wp
+#buildctf
 
 本次比赛为新生赛,比较菜,做出来的题不多(bushi)
 
