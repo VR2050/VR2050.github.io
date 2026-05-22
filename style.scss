@@ -212,16 +212,30 @@ table {
   width: 100%;
   border: 1px solid $table-border-color;
   border-collapse: collapse;
+  overflow: hidden;
+  border-radius: 10px;
+  background: var(--panel);
 }
 
 td, th {
   padding: .25rem .5rem;
   border: 1px solid $table-border-color;
+  color: var(--text);
 }
 
 tbody tr:nth-child(odd) td,
 tbody tr:nth-child(odd) th {
   background-color: $table-background-color;
+}
+
+table a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+table a:hover {
+  color: var(--accent-2);
 }
 
 // Blockquote
@@ -1232,6 +1246,85 @@ nav a:hover,
   color: var(--accent-2);
   border-color: var(--accent-2);
   background: var(--panel);
+}
+
+.entry a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.entry a:hover {
+  color: var(--accent-2);
+}
+
+.entry pre {
+  overflow-x: auto;
+}
+
+.code-block {
+  margin: 1.1rem 0;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--panel);
+  box-shadow: 0 12px 28px var(--shadow);
+  overflow: hidden;
+}
+
+.code-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--line);
+  background: rgba(105, 240, 255, 0.06);
+}
+
+.code-lang {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.code-copy-btn {
+  appearance: none;
+  border: 1px solid var(--line);
+  background: var(--bg-soft);
+  color: var(--text);
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.code-copy-btn:hover {
+  color: var(--accent-2);
+  border-color: var(--accent-2);
+}
+
+.code-block pre.highlight {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  border-radius: 0;
+  background: #040807;
+}
+
+.code-block pre.highlight code {
+  display: block;
+  padding: 14px 16px;
+}
+
+.code-block .highlight {
+  border-radius: 0;
+}
+
+.entry code.highlighter-rouge {
+  border-radius: 6px;
+  color: var(--accent);
+  background: rgba(105, 240, 255, 0.08);
+  border-color: var(--line);
 }
 
 // Settled on moving the import of syntax highlighting to the bottom of the CSS

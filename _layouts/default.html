@@ -49,6 +49,97 @@
           });
         }
 
+        function normalizeLanguage(raw) {
+          if (!raw) return "text";
+          var lang = raw.toLowerCase();
+          var aliases = {
+            sh: "bash",
+            shell: "bash",
+            zsh: "bash",
+            yml: "yaml",
+            js: "javascript",
+            ts: "typescript",
+            py: "python",
+            rb: "ruby",
+            md: "markdown",
+            csharp: "c#",
+            plaintext: "text"
+          };
+          return aliases[lang] || lang;
+        }
+
+        function detectLanguage(block) {
+          var node = block;
+          while (node && node !== document.body) {
+            if (node.classList) {
+              for (var i = 0; i < node.classList.length; i++) {
+                var cls = node.classList[i];
+                if (cls.indexOf("language-") === 0) return normalizeLanguage(cls.slice(9));
+              }
+            }
+            node = node.parentElement;
+          }
+          return "text";
+        }
+
+        function enhanceCodeBlocks() {
+          var pres = document.querySelectorAll("pre.highlight");
+          for (var i = 0; i < pres.length; i++) {
+            var pre = pres[i];
+            if (pre.closest(".code-block")) continue;
+
+            var wrapper = document.createElement("div");
+            wrapper.className = "code-block";
+            pre.parentNode.insertBefore(wrapper, pre);
+            wrapper.appendChild(pre);
+
+            var toolbar = document.createElement("div");
+            toolbar.className = "code-toolbar";
+
+            var lang = document.createElement("span");
+            lang.className = "code-lang";
+            lang.textContent = detectLanguage(pre);
+
+            var copyBtn = document.createElement("button");
+            copyBtn.type = "button";
+            copyBtn.className = "code-copy-btn";
+            copyBtn.textContent = "Copy";
+            copyBtn.setAttribute("aria-label", "Copy code");
+
+            copyBtn.addEventListener("click", (function (btn, codeEl) {
+              return function () {
+                var text = codeEl ? codeEl.innerText : "";
+                function markCopied() {
+                  var oldText = btn.textContent;
+                  btn.textContent = "Copied";
+                  setTimeout(function () {
+                    btn.textContent = oldText;
+                  }, 1200);
+                }
+
+                if (navigator.clipboard && navigator.clipboard.writeText) {
+                  navigator.clipboard.writeText(text).then(markCopied).catch(function () {});
+                } else {
+                  var ta = document.createElement("textarea");
+                  ta.value = text;
+                  document.body.appendChild(ta);
+                  ta.select();
+                  try {
+                    document.execCommand("copy");
+                    markCopied();
+                  } catch (e) {}
+                  document.body.removeChild(ta);
+                }
+              };
+            })(copyBtn, pre.querySelector("code")));
+
+            toolbar.appendChild(lang);
+            toolbar.appendChild(copyBtn);
+            wrapper.insertBefore(toolbar, pre);
+          }
+        }
+
+        enhanceCodeBlocks();
         updateThemeButton();
       });
     </script>
