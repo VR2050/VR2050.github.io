@@ -23,6 +23,11 @@ body {
   font-family: $base-font;
   color: $base-color;
   line-height: 1.7em;
+  background:
+    radial-gradient(circle at 10% 5%, rgba(34, 211, 238, 0.08), transparent 32%),
+    radial-gradient(circle at 90% 8%, rgba(74, 222, 128, 0.08), transparent 30%),
+    radial-gradient(circle at 50% 100%, rgba(56, 189, 248, 0.05), transparent 42%),
+    #020617;
 }
 
 .container {
@@ -36,6 +41,7 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 2em;
   margin: 1em 0 16px;
   padding: 0;
+  color: #e2e8f0;
 
   @include mobile {
     line-height: 1.6em;
@@ -67,16 +73,16 @@ h4 {
 }
 
 h6 {
-  color: $base-lighten-color;
+  color: #94a3b8;
 }
 
 p {
-  color: $text-color;
+  color: #cbd5e1;
   margin: 1em 0;
 }
 
 a {
-  color: $link-color;
+  color: #67e8f9;
   text-decoration: none;
   cursor: pointer;
   -webkit-transition: all 0.5s;
@@ -86,7 +92,7 @@ a {
   transition: all 0.5s;
 
   &:hover, &:active {
-    color: $link-lighten-color;
+    color: #a5f3fc;
   }
 }
 
@@ -110,7 +116,7 @@ sup {
 
 hr {
   border: 0;
-  border-top: 1px solid $divider-color;
+  border-top: 1px solid rgba(148, 163, 184, 0.2);
   margin: 1.5em auto;
 }
 
@@ -221,9 +227,11 @@ tbody tr:nth-child(odd) th {
 // Blockquote
 blockquote {
   font-weight: 300;
-  padding: 0 0 0 1.4rem;
+  padding: 0.65rem 0.9rem 0.65rem 1rem;
   margin: 0 2rem 1rem 0;
-  border-left: .2em solid $blockquote-border-color;
+  border-left: .2em solid rgba(34, 211, 238, 0.45);
+  background: rgba(15, 23, 42, 0.58);
+  border-radius: 8px;
 
   p {
     color: $blockquote-color;
@@ -266,7 +274,7 @@ img {
   display: block;
   max-width: 100%;
   margin: 0 0 1em;
-  border-radius: 5px;
+  border-radius: 8px;
 }
 
 // Fixes images in popup boxes from Google Translate
@@ -322,13 +330,15 @@ img {
   width: 30%;
 	-webkit-background-size: cover;
 	background-size: cover;
-	background-color: $background-color;
+	background:
+    linear-gradient(180deg, rgba(8, 15, 35, 0.98), rgba(2, 6, 23, 0.95));
 	height: 100%;
 	top: 0;
 	left:0;
 	position: fixed;
 	z-index: 4;
-  border-right: 1px solid $divider-color;
+  border-right: 1px solid rgba(103, 232, 249, 0.2);
+  box-shadow: inset -1px 0 0 rgba(56, 189, 248, 0.08);
 
   @include mobile {
     width: 100%;
@@ -378,7 +388,7 @@ img {
 
 .site-name {
   margin: 0 auto;
-  color: $base-color;
+  color: #e2e8f0;
   cursor: pointer;
   font-family: $base-font;
   font-weight: 700;
@@ -388,7 +398,7 @@ img {
 
 .site-description {
   margin: 15px auto;
-  color: $base-lighten-color;
+  color: #93c5fd;
   font-size: 16px;
 
   @include mobile {
@@ -415,13 +425,25 @@ nav {
   a {
     margin: 0 10px;
     text-align: right;
-    font-weight: 300;
-    letter-spacing: 1px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    color: #cbd5e1;
+    border: 1px solid rgba(100, 116, 139, 0.35);
+    background: rgba(15, 23, 42, 0.45);
+    border-radius: 999px;
+    padding: 7px 14px;
 
     @include mobile {
       margin: 0 10px;
-      color: $link-color;
+      color: #cbd5e1;
     }
+  }
+
+  a:hover {
+    color: #67e8f9;
+    border-color: rgba(34, 211, 238, 0.5);
+    box-shadow: 0 0 0 1px rgba(34, 211, 238, 0.22), 0 0 18px rgba(34, 211, 238, 0.2);
+    background: rgba(8, 47, 73, 0.4);
   }
 }
 
@@ -457,13 +479,14 @@ nav {
       > a {
         margin: 3px 3px 3px 0;
         padding: .5px 4px;
-        color: $base-color;
-        background-color: $tag-index-label-background-color;
+        color: #67e8f9;
+        background-color: rgba(8, 47, 73, 0.42);
         border-radius: 3px;
+        border: 1px solid rgba(34, 211, 238, 0.3);
 
         &:hover {
-          color: $link-color;
-          background-color:$link-bghv-color;
+          color: #a5f3fc;
+          background-color: rgba(12, 74, 110, 0.55);
         }
       }
     }
@@ -483,7 +506,7 @@ nav {
 .date {
   font-weight: 300;
   font-size: $small-font-size;
-  color: $base-lighten-color;
+  color: #93c5fd;
   margin-right: 4px;
 }
 
@@ -524,6 +547,9 @@ nav {
   z-index: 4;
   padding: 60px 20px 0 20px;
   
+  background: rgba(2, 6, 23, 0.72);
+  border-left: 1px solid rgba(100, 116, 139, 0.25);
+
   &:before{
     content:"目录";
     margin: 0 0 1em 1em;
@@ -531,11 +557,20 @@ nav {
     font-size: 1.2em;
     display: block;
     padding-bottom: 0.6em;
-    border-bottom: 3px double $divider-color;
+    border-bottom: 3px double rgba(100, 116, 139, 0.5);
+    color: #93c5fd;
   }
 
   li:before{
     content:"";
+  }
+
+  a {
+    color: #cbd5e1;
+  }
+
+  a:hover {
+    color: #67e8f9;
   }
 
   @include mobile{
@@ -550,7 +585,7 @@ nav {
 }
 
 .pagination {
-  border-top: 1px solid $divider-color;
+  border-top: 1px solid rgba(100, 116, 139, 0.32);
   font-weight: 300;
   padding: 40px 0;
   width: 100%;
@@ -565,15 +600,17 @@ nav {
     float: left;
     width: 50%;
     a {
-      color: $base-lighten-color;
-      border: 1px solid $divider-color;
+      color: #cbd5e1;
+      border: 1px solid rgba(100, 116, 139, 0.4);
       padding: 10px 20px;
-      background: $background-color;
+      background: rgba(15, 23, 42, 0.62);
+      border-radius: 999px;
 
       &:hover, &:focus {
-        color: $link-lighten-color;
-        border: 1px solid $link-lighten-color;
-        background-color: $link-bghv-color;
+        color: #67e8f9;
+        border: 1px solid rgba(34, 211, 238, 0.48);
+        background-color: rgba(8, 47, 73, 0.46);
+        box-shadow: 0 0 0 1px rgba(34, 211, 238, 0.16);
       }
     }
   }
@@ -583,15 +620,17 @@ nav {
     text-align: right;
     width: 50%;
     a {
-      color: $base-lighten-color;
-      border: 1px solid $divider-color;
+      color: #cbd5e1;
+      border: 1px solid rgba(100, 116, 139, 0.4);
       padding: 10px 20px;
-      background: $background-color;
+      background: rgba(15, 23, 42, 0.62);
+      border-radius: 999px;
 
       &:hover, &:focus {
-        color: $link-lighten-color;
-        border: 1px solid $link-lighten-color;
-        background-color: $link-bghv-color;
+        color: #67e8f9;
+        border: 1px solid rgba(34, 211, 238, 0.48);
+        background-color: rgba(8, 47, 73, 0.46);
+        box-shadow: 0 0 0 1px rgba(34, 211, 238, 0.16);
       }
     }
   }
@@ -600,10 +639,10 @@ nav {
 // Archive
 .archive {
   a {
-    color: $base-color;
+    color: #cbd5e1;
   }
   time {
-    color: $base-lighten-color;
+    color: #93c5fd;
     font-size: $small-font-size;
     font-weight: 300;
     margin-left: 3px;
@@ -626,11 +665,12 @@ nav {
       display: inline-block;
       margin: 1px;
       color: $base-color;
-      background-color: $tag-index-label-background-color;
+      background-color: rgba(8, 47, 73, 0.42);
       border-radius: 3px;
+      border: 1px solid rgba(34, 211, 238, 0.3);
 
       &:hover {
-        background-color: $link-bghv-color;
+        background-color: rgba(12, 74, 110, 0.55);
       }
 
       span {
@@ -649,10 +689,10 @@ nav {
 
 .tags > .tag {
   a {
-    color: $base-color;
+    color: #cbd5e1;
   }
   time {
-    color: $base-lighten-color;
+    color: #93c5fd;
     font-size: $small-font-size;
     font-weight: 300;
     margin-left: 3px;
@@ -664,8 +704,8 @@ nav {
 // Footer
 .wrapper-footer-desktop {
   margin-top: 50px;
-  border-top: 1px solid $footer-border-color;
-  background-color: $footer-background-color;
+  border-top: 1px solid rgba(100, 116, 139, 0.32);
+  background: rgba(2, 6, 23, 0.8);
   position: absolute;
   clear:both;
   width:100%;
@@ -683,8 +723,8 @@ nav {
   @include mobile {
     display: block;
     width: 100%;
-    border-top: 1px solid $footer-border-color;
-    background-color: $footer-background-color;
+    border-top: 1px solid rgba(100, 116, 139, 0.32);
+    background: rgba(2, 6, 23, 0.8);
   }
 }
 
@@ -694,7 +734,7 @@ footer {
 
   p {
     font-size: $small-font-size;
-    color: $base-lighten-color;
+    color: #94a3b8;
   }
 
   .svg-icon {
@@ -712,10 +752,10 @@ footer {
     svg {
       height: 20px;
       width: 20px;
-      fill: $base-lighten-color;
+      fill: #94a3b8;
       
       &:hover {
-        fill: $link-lighten-color;
+        fill: #67e8f9;
       }
     }
 
@@ -731,13 +771,6 @@ footer {
       left: 0;
     }
   }
-}
-
-body {
-  background:
-    radial-gradient(circle at 15% 10%, rgba(59, 130, 246, 0.08), transparent 40%),
-    radial-gradient(circle at 85% 20%, rgba(16, 185, 129, 0.07), transparent 38%),
-    $background-color;
 }
 
 .container {
@@ -756,21 +789,21 @@ body {
   width: 100%;
   max-width: 640px;
   height: 44px;
-  color: #1f2937;
-  background-color: rgba(255, 255, 255, 0.85);
+  color: #e2e8f0;
+  background-color: rgba(15, 23, 42, 0.82);
   line-height: 44px;
   padding: 0 16px;
-  border: 1px solid rgba(15, 23, 42, 0.16);
+  border: 1px solid rgba(100, 116, 139, 0.45);
   font-size: 16px;
   border-radius: 999px;
   outline: none;
   box-sizing: border-box;
-  box-shadow: 0 10px 30px rgba(2, 6, 23, 0.06);
+  box-shadow: 0 10px 30px rgba(2, 6, 23, 0.35);
 }
 
 #search-input:focus {
-  border-color: rgba(30, 64, 175, 0.5);
-  box-shadow: 0 12px 34px rgba(30, 64, 175, 0.15);
+  border-color: rgba(34, 211, 238, 0.6);
+  box-shadow: 0 0 0 2px rgba(34, 211, 238, 0.18), 0 12px 34px rgba(34, 211, 238, 0.2);
 }
 
 #results-container {
@@ -788,24 +821,24 @@ body {
 .posts > .post {
   margin-bottom: 18px;
   padding: 18px 20px 20px;
-  border: 1px solid rgba(15, 23, 42, 0.08);
+  border: 1px solid rgba(71, 85, 105, 0.55);
   border-radius: 14px;
-  background: rgba(255, 255, 255, 0.82);
-  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.07);
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.86), rgba(2, 6, 23, 0.88));
+  box-shadow: 0 14px 40px rgba(2, 6, 23, 0.36);
 }
 
 .posts > .post:hover {
-  border-color: rgba(30, 64, 175, 0.18);
-  box-shadow: 0 18px 42px rgba(30, 64, 175, 0.1);
+  border-color: rgba(34, 211, 238, 0.52);
+  box-shadow: 0 18px 42px rgba(34, 211, 238, 0.16);
 }
 
 .site-counter {
   text-align: center;
   margin-top: 18px;
+  color: #94a3b8;
 }
 
 // Settled on moving the import of syntax highlighting to the bottom of the CSS
 // ... Otherwise it really bloats up the top of the CSS file and makes it difficult to find the start
 @import "highlights";
 @import "gitalk";
-
