@@ -1034,6 +1034,206 @@ nav a:hover {
   color: #ffd166;
 }
 
+/* Final theme system: black-highlight default + light mode + cleaner homepage cards */
+body {
+  --bg: #05070a;
+  --bg-soft: #0a0f14;
+  --panel: rgba(10, 14, 18, 0.9);
+  --text: #d7dde6;
+  --muted: #93a0b3;
+  --accent: #69f0ff;
+  --accent-2: #ff7ab6;
+  --line: rgba(105, 240, 255, 0.24);
+  --shadow: rgba(0, 0, 0, 0.45);
+}
+
+body[data-theme="light"] {
+  --bg: #f7f8fc;
+  --bg-soft: #ffffff;
+  --panel: rgba(255, 255, 255, 0.93);
+  --text: #21262f;
+  --muted: #5b6473;
+  --accent: #2d7dff;
+  --accent-2: #ff4d9a;
+  --line: rgba(45, 125, 255, 0.2);
+  --shadow: rgba(32, 40, 60, 0.1);
+}
+
+body {
+  background: radial-gradient(circle at 12% 8%, rgba(105, 240, 255, 0.08), transparent 28%), var(--bg);
+  color: var(--text);
+}
+
+body:before,
+body:after {
+  opacity: 0.55;
+}
+
+h1, h2, h3, h4, h5, h6,
+p, li, dd, dt,
+.archive a,
+.tags > .tag a,
+nav a,
+.site-name a {
+  color: var(--text);
+}
+
+a {
+  color: var(--accent);
+}
+
+a:hover,
+a:active {
+  color: var(--accent-2);
+}
+
+.wrapper-sidebar {
+  background: linear-gradient(180deg, var(--bg-soft), var(--bg));
+  border-right: 1px solid var(--line);
+}
+
+.site-name {
+  color: var(--text);
+}
+
+.site-description,
+.date,
+footer p,
+.site-counter {
+  color: var(--muted);
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}
+
+nav a,
+.theme-toggle {
+  border: 1px solid var(--line);
+  background: var(--panel);
+  border-radius: 10px;
+  padding: 7px 14px;
+  font-family: "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  transition: 0.2s ease;
+}
+
+nav a:hover,
+.theme-toggle:hover {
+  color: var(--accent-2);
+  border-color: var(--accent-2);
+  box-shadow: 0 6px 18px var(--shadow);
+}
+
+.theme-toggle {
+  color: var(--text);
+  cursor: pointer;
+}
+
+#search-input {
+  color: var(--text);
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+
+#search-input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(105, 240, 255, 0.18);
+}
+
+.posts > .post {
+  display: block;
+  margin-bottom: 20px;
+  padding: 18px 20px 20px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--panel);
+  box-shadow: 0 10px 24px var(--shadow);
+}
+
+.posts > .post:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.posts > .post h1 {
+  margin: 0 0 10px;
+  line-height: 1.35;
+}
+
+.posts > .post h1 a {
+  color: var(--text);
+}
+
+.posts > .post h1 a:hover {
+  color: var(--accent-2);
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 10px;
+  margin-bottom: 8px;
+}
+
+.posts .tag {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.posts .tag li {
+  margin: 0;
+}
+
+.posts .tag li:before {
+  content: "";
+}
+
+.posts .tag a {
+  background: rgba(105, 240, 255, 0.1);
+  border: 1px solid var(--line);
+  color: var(--accent);
+}
+
+.posts .entry {
+  color: var(--text);
+  line-height: 1.85;
+  word-break: break-word;
+}
+
+.posts .read-more {
+  display: inline-block;
+  margin-top: 8px;
+  color: var(--accent);
+  border-bottom: 1px dashed var(--line);
+}
+
+.pagination,
+.wrapper-footer-desktop,
+.wrapper-footer-mobile {
+  border-top-color: var(--line);
+  background: transparent;
+}
+
+.pagination > .prev a,
+.pagination > .next a {
+  color: var(--text);
+  border: 1px solid var(--line);
+  background: var(--panel);
+  border-radius: 10px;
+}
+
+.pagination > .prev a:hover,
+.pagination > .next a:hover {
+  color: var(--accent-2);
+  border-color: var(--accent-2);
+  background: var(--panel);
+}
+
 // Settled on moving the import of syntax highlighting to the bottom of the CSS
 // ... Otherwise it really bloats up the top of the CSS file and makes it difficult to find the start
 @import "highlights";
