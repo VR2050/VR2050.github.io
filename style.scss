@@ -838,6 +838,202 @@ footer {
   color: #94a3b8;
 }
 
+/* Cybersecurity dark theme override */
+body {
+  color: #b8c4bf;
+  background: #05070a;
+  position: relative;
+}
+
+body:before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(120, 255, 168, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(120, 255, 168, 0.03) 1px, transparent 1px);
+  background-size: 26px 26px;
+  z-index: -2;
+}
+
+body:after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.018),
+    rgba(255, 255, 255, 0.018) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  mix-blend-mode: soft-light;
+  z-index: -1;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #d2e9dc;
+}
+
+p, li, dd, dt {
+  color: #b8c4bf;
+}
+
+a {
+  color: #7dff8f;
+}
+
+a:hover, a:active {
+  color: #ffd166;
+}
+
+.wrapper-sidebar {
+  background: linear-gradient(180deg, rgba(7, 13, 10, 0.98), rgba(5, 7, 10, 0.98));
+  border-right: 1px solid rgba(125, 255, 143, 0.24);
+  box-shadow: none;
+}
+
+.site-name {
+  color: #d7ffe1;
+  font-family: "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  letter-spacing: 0.5px;
+}
+
+.site-description {
+  color: #8be8a1;
+}
+
+nav a {
+  font-family: "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  color: #b8c4bf;
+  border: 1px solid rgba(125, 255, 143, 0.3);
+  background: rgba(9, 16, 12, 0.88);
+  border-radius: 3px;
+}
+
+nav a:hover {
+  color: #05070a;
+  border-color: #7dff8f;
+  background: #7dff8f;
+  box-shadow: 0 0 0 1px rgba(125, 255, 143, 0.2), 0 0 14px rgba(125, 255, 143, 0.28);
+}
+
+.posts > .post {
+  border: 1px solid rgba(125, 255, 143, 0.2);
+  border-radius: 4px;
+  background: rgba(8, 12, 10, 0.88);
+  box-shadow: none;
+  margin-bottom: 18px;
+  padding: 18px 20px 20px;
+}
+
+.posts > .post:hover {
+  border-color: rgba(255, 209, 102, 0.55);
+  box-shadow: 0 0 0 1px rgba(255, 209, 102, 0.12);
+}
+
+.posts > .post h1 {
+  margin: 0 0 10px;
+  line-height: 1.35;
+  font-size: 24px;
+}
+
+.date {
+  color: #8be8a1;
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 10px;
+  margin-bottom: 6px;
+}
+
+.posts .tag {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.posts .tag li {
+  margin: 0;
+}
+
+.posts .tag li:before {
+  content: "";
+}
+
+.posts .entry {
+  color: #b8c4bf;
+  line-height: 1.8;
+  word-break: break-word;
+}
+
+.posts .read-more {
+  display: inline-block;
+  margin-top: 6px;
+  font-family: "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  border-bottom: 1px dashed rgba(125, 255, 143, 0.45);
+  padding-bottom: 1px;
+}
+
+#search-input {
+  color: #d6ffe0;
+  background: rgba(6, 12, 9, 0.94);
+  border: 1px solid rgba(125, 255, 143, 0.35);
+  border-radius: 4px;
+  box-shadow: none;
+  font-family: "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+#search-input:focus {
+  border-color: #ffd166;
+  box-shadow: 0 0 0 2px rgba(255, 209, 102, 0.2);
+}
+
+.pagination,
+.wrapper-footer-desktop,
+.wrapper-footer-mobile {
+  border-top-color: rgba(125, 255, 143, 0.22);
+}
+
+.pagination > .prev a,
+.pagination > .next a {
+  border-radius: 3px;
+  color: #b8c4bf;
+  border-color: rgba(125, 255, 143, 0.28);
+  background: rgba(9, 16, 12, 0.88);
+}
+
+.pagination > .prev a:hover,
+.pagination > .next a:hover {
+  color: #05070a;
+  background: #7dff8f;
+  border-color: #7dff8f;
+  box-shadow: 0 0 0 1px rgba(125, 255, 143, 0.18);
+}
+
+.toc {
+  background: rgba(5, 7, 10, 0.92);
+  border-left: 1px solid rgba(125, 255, 143, 0.2);
+}
+
+.toc:before {
+  color: #8be8a1;
+  border-bottom-color: rgba(125, 255, 143, 0.34);
+}
+
+.toc a {
+  color: #a9b6b0;
+}
+
+.toc a:hover {
+  color: #ffd166;
+}
+
 // Settled on moving the import of syntax highlighting to the bottom of the CSS
 // ... Otherwise it really bloats up the top of the CSS file and makes it difficult to find the start
 @import "highlights";
