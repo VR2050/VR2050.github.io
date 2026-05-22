@@ -2,19 +2,7 @@
 layout: default
 ---
 <div class="search-container">
-  <input type="text" id="search-input" placeholder="search blog posts..." style="width: 90%;
-    height: 35px;
-    color: #333;
-    background-color: rgba(227,231,236,.2);
-    line-height: 35px;
-    padding:0px 16px;
-    border: 1px solid #c0c0c0;
-    font-size: 16px;
-    font-weight: bold;
-    border-radius: 17px;
-    outline: none;
-    box-sizing: border-box;
-    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102,175,233,.6);">
+  <input type="text" id="search-input" placeholder="search blog posts...">
   <ul id="results-container"></ul>
 </div>
 
@@ -91,22 +79,21 @@ layout: default
 
 <!-- 浮动音乐播放器 -->
 <div class="floating-player">
-  <img src="/luv2.jpeg" alt="Album Cover" class="album-cover">
+  <img src="/luv2.jpeg" alt="Album Cover" class="album-cover" loading="lazy" decoding="async">
   <div class="player-content">
     <h3>Luv (sic) pt2</h3>
-    <audio id="floatingAudioPlayer" src="./Luv2.mp3" autoplay></audio>
+    <audio id="floatingAudioPlayer" src="./Luv2.mp3" preload="none"></audio>
     <div class="floating-player-controls">
-      <button id="playPauseButton">Pause</button>
+      <button id="playPauseButton">Play</button>
       <button id="stopButton">Stop</button>
     </div>
   </div>
 </div>
 
 <!-- 访客统计 -->
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
+<script defer src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <!-- pv的方式，单个用户连续点击n篇文章，记录n次访问量 -->
-<div align="center">
+<div class="site-counter">
   <span id="busuanzi_container_site_pv" style="font-family:Consolas;color:Silver;font-size:12px;">
     View:<span id="busuanzi_value_site_pv" style="font-family:Consolas;color:Silver;font-size:12px;"></span>
   </span>
@@ -118,4 +105,4 @@ layout: default
 
 <!-- 引入音乐播放器的样式和脚本 -->
 <link rel="stylesheet" href="/music.css">
-<script src="/js/musicplayer.js"></script>
+<script defer src="/js/musicplayer.js"></script>

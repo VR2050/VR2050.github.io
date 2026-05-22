@@ -17,6 +17,15 @@
     </div>
 
     {% include analytics.html %}
+    <script defer>
+      document.addEventListener("DOMContentLoaded", function () {
+        var images = document.querySelectorAll(".entry img");
+        for (var i = 0; i < images.length; i++) {
+          if (!images[i].hasAttribute("loading")) images[i].setAttribute("loading", "lazy");
+          if (!images[i].hasAttribute("decoding")) images[i].setAttribute("decoding", "async");
+        }
+      });
+    </script>
   </body>
 
   {% if page.toc==true %}

@@ -4,11 +4,6 @@ const stopButton = document.getElementById('stopButton');
 
 let isPlaying = false;
 
-// 等待所有资源加载完成后再开始播放音乐
-window.onload = function() {
-    floatingAudioPlayer.play();
-};
-
 floatingAudioPlayer.addEventListener('play', () => {
     isPlaying = true;
     playPauseButton.textContent = 'Pause';

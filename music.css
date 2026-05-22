@@ -5,16 +5,17 @@ body {
 
 .floating-player {
     position: fixed;
-    right: 10px;
-    bottom: 10px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    width: 220px;
+    right: 16px;
+    bottom: 16px;
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 16px 40px rgba(15, 23, 42, 0.14);
+    border-radius: 16px;
+    width: 240px;
     display: flex;
     align-items: center;
-    padding: 5px;
+    padding: 8px;
     z-index: 1000;
 }
 
@@ -22,8 +23,8 @@ body {
     width: 80px;
     height: 80px;
     object-fit: cover;
-    border-radius: 10px 0 0 10px;
-    margin-right: 10px;
+    border-radius: 12px;
+    margin-right: 12px;
 }
 
 .player-content {
@@ -36,7 +37,7 @@ body {
 
 .player-content h3 {
     margin: 0;
-    font-size: 14px;
+    font-size: 13px;
     line-height: 1.2;
 }
 
@@ -45,22 +46,24 @@ body {
 }
 
 .floating-player-controls {
-    margin-top: 5px;
+    margin-top: 8px;
     display: flex;
     justify-content: space-between;
+    gap: 8px;
 }
 
 .floating-player-controls button {
-    background-color: #070707;
-    color: #cfd1d5;
+    background: #111827;
+    color: #f8fafc;
     border: none;
-    padding: 5px 10px;
-    border-radius: 5px;
+    padding: 7px 12px;
+    border-radius: 999px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: transform 0.2s ease, background-color 0.2s ease;
     font-size: 12px;
 }
 
 .floating-player-controls button:hover {
-    background-color: #0f0f10;
+    background: #334155;
+    transform: translateY(-1px);
 }
