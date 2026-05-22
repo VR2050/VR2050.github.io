@@ -1268,34 +1268,46 @@ nav a:hover,
   background: var(--panel);
   box-shadow: 0 12px 28px var(--shadow);
   overflow: hidden;
+  position: relative;
 }
 
 .code-toolbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 14px;
-  border-bottom: 1px solid var(--line);
-  background: rgba(105, 240, 255, 0.06);
+  position: absolute;
+  top: 10px;
+  left: 12px;
+  right: 12px;
+  height: 28px;
+  z-index: 3;
+  pointer-events: none;
 }
 
 .code-lang {
+  display: inline-block;
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--muted);
+  background: rgba(105, 240, 255, 0.1);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 4px 9px;
+  line-height: 1;
 }
 
 .code-copy-btn {
+  position: absolute;
+  right: 0;
+  top: 0;
   appearance: none;
   border: 1px solid var(--line);
   background: var(--bg-soft);
   color: var(--text);
-  border-radius: 8px;
-  padding: 6px 10px;
+  border-radius: 999px;
+  padding: 5px 11px;
   font-size: 12px;
   cursor: pointer;
+  pointer-events: auto;
 }
 
 .code-copy-btn:hover {
@@ -1313,7 +1325,7 @@ nav a:hover,
 
 .code-block pre.highlight code {
   display: block;
-  padding: 14px 16px;
+  padding: 46px 16px 14px;
 }
 
 .code-block .highlight {
