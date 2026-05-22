@@ -16,7 +16,24 @@
       </div>
     </div>
 
+    <div class="floating-player">
+      <img src="{{ site.baseurl }}/luv2.jpeg" alt="Album Cover" class="album-cover" loading="lazy" decoding="async">
+      <div class="player-content">
+        <div class="player-head">
+          <h3>Luv (sic) pt2</h3>
+          <span class="playing-dot" aria-hidden="true"></span>
+        </div>
+        <audio id="floatingAudioPlayer" src="{{ site.baseurl }}/Luv2.mp3" preload="metadata"></audio>
+        <div class="floating-player-controls">
+          <button id="playPauseButton" type="button">Play</button>
+          <button id="stopButton" type="button">Stop</button>
+        </div>
+      </div>
+    </div>
+
     {% include analytics.html %}
+    <link rel="stylesheet" href="{{ site.baseurl }}/music.css">
+    <script defer src="{{ site.baseurl }}/js/musicplayer.js"></script>
     <script defer>
       document.addEventListener("DOMContentLoaded", function () {
         var images = document.querySelectorAll(".entry img");

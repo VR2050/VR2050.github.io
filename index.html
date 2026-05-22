@@ -77,19 +77,6 @@ layout: default
   {% endif %}
 </div>
 
-<!-- 浮动音乐播放器 -->
-<div class="floating-player">
-  <img src="/luv2.jpeg" alt="Album Cover" class="album-cover" loading="lazy" decoding="async">
-  <div class="player-content">
-    <h3>Luv (sic) pt2</h3>
-    <audio id="floatingAudioPlayer" src="./Luv2.mp3" preload="none"></audio>
-    <div class="floating-player-controls">
-      <button id="playPauseButton">Play</button>
-      <button id="stopButton">Stop</button>
-    </div>
-  </div>
-</div>
-
 <!-- 访客统计 -->
 <script defer src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <!-- pv的方式，单个用户连续点击n篇文章，记录n次访问量 -->
@@ -102,7 +89,3 @@ layout: default
     User:<span id="busuanzi_value_site_uv" style="font-family:Consolas;color:Silver;font-size:12px;"></span>
   </span>
 </div>
-
-<!-- 引入音乐播放器的样式和脚本 -->
-<link rel="stylesheet" href="/music.css">
-<script defer src="/js/musicplayer.js"></script>
