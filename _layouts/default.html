@@ -100,10 +100,12 @@
         }
 
         function enhanceCodeBlocks() {
-          var pres = document.querySelectorAll("pre.highlight");
+          var pres = document.querySelectorAll("pre");
           for (var i = 0; i < pres.length; i++) {
             var pre = pres[i];
             if (pre.closest(".code-block")) continue;
+            var codeEl = pre.querySelector("code");
+            if (!codeEl) continue;
 
             var wrapper = document.createElement("div");
             wrapper.className = "code-block";
@@ -115,7 +117,8 @@
 
             var lang = document.createElement("span");
             lang.className = "code-lang";
-            lang.textContent = detectLanguage(pre);
+            var explicitLang = codeEl.getAttribute("data-language");
+            lang.textContent = normalizeLanguage(explicitLang || detectLanguage(pre));
 
             var copyBtn = document.createElement("button");
             copyBtn.type = "button";
@@ -148,7 +151,7 @@
                   document.body.removeChild(ta);
                 }
               };
-            })(copyBtn, pre.querySelector("code")));
+            })(copyBtn, codeEl));
 
             toolbar.appendChild(lang);
             toolbar.appendChild(copyBtn);
